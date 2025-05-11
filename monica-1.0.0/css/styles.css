@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /* =================================================================== 
  * Monica Main Stylesheet
  * Template Ver. 1.0.0
@@ -706,6 +707,11 @@ table {
 /* .grid-section-split__header{
 	background-color: var(--color-1-darkest);
 } */
+ #contact h2{
+	margin-top: 84px;
+	/* font-family: "Poppins", sans-serif; */
+	font-family: "Lora", serif;
+ }
 .Formcontainer {
 	position: relative;
 	display: flex;
@@ -722,21 +728,26 @@ table {
 	position: absolute;
 	background: #fff;
 	padding: 30px;
-	left: 18vw;
+	left: 16vw;
 /* right: 23px; */
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-	max-width: 560px;
+    width: 560px;
 	/* max-height: 400px; */
 	flex: 1;
-	z-index: 1000;
+	z-index: 3;
 	margin: 20px auto;
   }
   .form-box2 input, .form-box2 textarea {
 	width: 100%;
+	/* font-family: "Poppins", sans-serif; */
+	font-family: "Lora", serif;
 	caret-color: var(--color-1-light);
 	margin: 10px 0;
 	padding: 10px;
-	color:var(--color-1-dark);
+	font-size: 23px;
+	color: var(--color-gray-3);
+	
+	/* color:var(--color-2-dark); */
 	/* border: none ; */
 	/* background-color: none; */
 	border-bottom: 1px solid #ccc;
@@ -744,7 +755,8 @@ table {
   .form-box2 label {
 	font-size: 17px;
 	font-weight: 100;
-	font-family:var(--font-2) ;
+	/* font-family: "Poppins", sans-serif; */
+	font-family: "Lora", serif;
   }
   .form-box2 button {
 	text-align: center !important;
@@ -757,10 +769,12 @@ table {
 	height: 80%;
   }
   .checkbox{
-	margin-bottom: 12px;
+	display: block;
+	margin-bottom: 22px;
 	text-align: center;
   }
   .consent{
+	margin-top: 12px;
 	accent-color: var(--color-1-darker);
   }
   .form-box2 button:hover{
@@ -773,16 +787,39 @@ table {
 	right: 12vw;
 	margin: 20px;
 	max-width: 560px;
-	z-index: 999;
+	z-index: 2;
   }
   .image-box img {
 	width: 100%;
 	border-radius: 10px;
   }
+
+  /* ====================responsive design for .form-box2============== */
+  @media screen  and ( max-width:820px){
+
+	.form-box2{
+		left: 0%;
+		right: 7%;
+        margin: 0 auto;
+		width: 100% !important;
+
+	}
+	.form-box2 input{
+		padding: 8px 0px;
+	}
+	.image-box{
+		display: none;
+	}
+
+	
+  }
 .cardTittle{
 	font-size: 6rem;
 	text-align: center;
 	color: var(--color-1);
+	margin-bottom: 52px;
+	/* font-family: "Poppins", sans-serif; */
+	font-family: "Lora", serif;
 }
 .grid {
 	display:flex;
@@ -804,8 +841,8 @@ table {
   }
 
   .card img {
-	width: 56vh;
-	height: 40vh;
+	width: 52vh;
+	height: 45vh;
 	display: block;
   }
   .stickyContainer{
@@ -828,7 +865,7 @@ table {
 	background-color: green;
 	padding: 7px;
 	border-radius: 50%;
-	z-index: 500; /* Makes sure it stays above other content */
+	z-index: 7; /* Makes sure it stays above other content */
   }
   .overlay {
 	position: absolute;
@@ -2159,10 +2196,10 @@ textarea,
 select {
 	--input-height     : var(--vspace-2);
 	--input-line-height: var(--vspace-1);
-	--input-vpadding   : calc(((var(--input-height) - var(--input-line-height)) / 2) - 1px);
+	--input-padding   : calc(((var(--input-height) - var(--input-line-height)) / 2) - 1px);
 	display            : block;
 	height             : var(--input-height);
-	padding            : var(--input-vpadding) calc(2.4rem - 1px);
+	padding            : var(--input-padding) calc(2.4rem - 1px);
 	border             : 0;
 	outline            : 0;
 	color              : var(--color-placeholder);
@@ -2231,7 +2268,7 @@ input[type=url]:focus,
 input[type=password]:focus,
 textarea:focus,
 select:focus {
-	color           : var(--color-black);
+	color           : var(--color-black) ;
 	background-color: white;
 	box-shadow      : 0 0 5px var(--color-1);
 	border          : 1px solid var(--color-1-light);
@@ -2359,9 +2396,9 @@ button.btn--primary,
 input[type=submit].btn--primary,
 input[type=reset].btn--primary,
 input[type=button].btn--primary {
-	background  : var(--color-btn-primary);
-	border-color: var(--color-btn-primary);
-	color       : var(--color-btn-primary-text);
+	background  : var(--color-btn-primary) !important;
+	border-color: var(--color-btn-primary) !important;
+	color       : var(--color-btn-primary-text) !important;
 }
 
 .btn.btn--primary:focus,
@@ -2374,9 +2411,9 @@ button.btn--primary:hover,
 input[type=submit].btn--primary:hover,
 input[type=reset].btn--primary:hover,
 input[type=button].btn--primary:hover {
-	background  : var(--color-btn-primary-hover);
-	border-color: var(--color-btn-primary-hover);
-	color       : var(--color-btn-primary-hover-text);
+	background  : var(--color-btn-primary-hover) ;
+	border-color: var(--color-btn-primary-hover) ;
+	color       : var(--color-btn-primary-hover-text) ;
 }
 
 /* button modifiers
@@ -2710,6 +2747,8 @@ td:last-child {
 .skill-bars {
 	list-style: none;
 	text-align: center;
+	/* font-family: "Poppins", sans-serif; */
+	font-family: "Lora", serif;
 	margin    : var(--vspace-2) 0 var(--vspace-1);
 }
 .u-add-bottom{
@@ -2724,14 +2763,17 @@ td:last-child {
 	margin-bottom: calc(var(--vspace-2) - 0.4rem);
 	padding      : 0;
 	border-radius: 8px;
+	/* font-family: "Poppins", sans-serif; */
+	font-family: "Lora", serif;
 	position     : relative;
 }
 
 .skill-bars li strong {
 	position      : absolute;
 	left          : 0;
+	font-family: "Poppins", sans-serif;
+	/* font-family: "Lora", serif; */
 	top           : calc(var(--vspace-1) * 1.25 * -1);
-	font-family   : var(--font-1);
 	font-weight   : 600;
 	color         : var(--color-text);
 	text-transform: uppercase;
@@ -2744,11 +2786,14 @@ td:last-child {
 	background: var(--color-text);
 	position  : relative;
 	height    : 100%;
+	/* font-family: "Poppins", sans-serif; */
+	font-family: "Lora", serif;
 }
 
 .skill-bars li .progress span {
 	display      : block;
-	font-family  : var(--font-1);
+	/* font-family: "Poppins", sans-serif; */
+	font-family: "Lora", serif;
 	color        : white;
 	font-size    : 1rem;
 	line-height  : 1;
@@ -2757,7 +2802,7 @@ td:last-child {
 	border-radius: 4px;
 	position     : absolute;
 	right        : 0;
-	z-index: 999;
+	z-index: 800;
 	top          : calc((var(--vspace-1) + 0.8rem) * -1);
 }
 
@@ -2768,7 +2813,7 @@ td:last-child {
 	margin-left     : -5px;
 	width           : 0px;
 	height          : 0;
-	z-index: 999;
+	z-index: 800;
 	border          : 5px solid transparent;
 	border-top-color: var(--color-text, var(--color-black));
 	content         : "";
@@ -2967,7 +3012,8 @@ td:last-child {
 	margin: 0;
 }
 .counter{
-	font-family      : var(--font-1);
+	/* font-family: "Poppins", sans-serif; */
+	font-family: "Lora", serif;
 	font-weight      : 500;
 	font-size        : 1.1em;
 	line-height      : 1;
@@ -3000,6 +3046,11 @@ td:last-child {
 	margin-top: 0;
 }
 
+.list-items__item-title{
+	font-family: "Poppins", sans-serif;
+	/* font-family: "Lora", serif; */
+	font-size: 26px;
+}
 .list-items__item-icon {
 	display         : inline-block;
 	margin-bottom   : var(--vspace-0_5);
@@ -3015,6 +3066,8 @@ td:last-child {
 .list-items__item-text{
    color: var(--color-1-light);
    text-align: center;
+   /* font-family: "Poppins", sans-serif; */
+	font-family: "Lora", serif;
 }
 
 .list-items__item-icon svg {
@@ -3033,7 +3086,7 @@ td:last-child {
 .list-items__item:hover{
 	  background-color: #121212;
   color: var(--color-1);
-  transform: scale(1.02);
+  transform: translateY(6px);
   transition: all 0.3s ease-in-out;
 }
 /* ------------------------------------------------------------------- 
@@ -3385,7 +3438,10 @@ td:last-child {
  *
  * ------------------------------------------------------------------- */
 .s-header {
+
 	--header-height: 80px;
+	/* padding: 12px 12px; */
+	/* background-color: var(--color-2-dark); */
 	--logo-width   : 9.6rem;
 	--box-shadow   : 0 1px 1px rgba(0, 0, 0, 0.02),
 		             0 2px 2px rgba(0, 0, 0, 0.02),
@@ -3396,7 +3452,7 @@ td:last-child {
 		             0 8px 8px rgba(0, 0, 0, 0.03),
 		              16px 16px rgba(0, 0, 0, 0.03);
 	z-index         : 100;
-	background-color: transparent;
+	background-color:transparent ;
 	height          : var(--header-height);
 	width           : 100%;
 	position        : absolute;
@@ -3447,6 +3503,7 @@ td:last-child {
 	display        : flex;
 	flex           : 1 1 0%;
 	align-items    : center;
+	background: transparent;
 	justify-content: space-between;
 }
 
@@ -3486,6 +3543,9 @@ td:last-child {
  */
 .s-header__contact-btn {
 	margin: 0;
+	padding: 0px 34px;
+	height: max-content;
+	width: max-content;
 	font-size: 18px;
 	font-family: "Poppins", sans-serif;
 	/* font-family        : "Arima", system-ui; */
@@ -3946,7 +4006,7 @@ td:last-child {
 }
 
 .s-intro__scroll-down .scroll-icon:hover{
-	transform: translateY(12px);
+	transform: translateX(-12px);
 }
 .s-intro__scroll-down svg {
 	height: var(--vspace-0_875);
@@ -4489,6 +4549,8 @@ td:last-child {
 .s-footer h3 {
 	color     : var(--color-3);
 	margin-top: 0;
+	font-family: "Lora", serif;
+
 }
 
 .s-footer__block {
@@ -4534,7 +4596,7 @@ td:last-child {
 }
 
 .s-footer__newsletter input[type=email]:focus {
-	color           : var(--color-3);
+	color           : var(--color-1-lighter);
 	background-color: var(--color-gray-18);
 	box-shadow      : 0 0 5px var(--color-1-dark);
 	border          : 1px solid var(--color-1-darker);

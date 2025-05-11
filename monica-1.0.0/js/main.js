@@ -7,12 +7,12 @@
 
     'use strict';
 
-    const cfg = {
+    // const cfg = {
 
-        // MailChimp URL
-        mailChimpURL : 'https://facebook.us1.list-manage.com/subscribe/post?u=1abf75f6981256963a47d197a&amp;id=37c6d8f4d6' 
+    //     // MailChimp URL
+    //     mailChimpURL : 'https://facebook.us1.list-manage.com/subscribe/post?u=1abf75f6981256963a47d197a&amp;id=37c6d8f4d6' 
 
-    };
+    // };
 
 
    /* preloader
@@ -191,7 +191,7 @@
 
         };
 
-        // Show error message
+    //     // Show error message
         function showError(field, error) {
 
             // Get field id or name
@@ -213,10 +213,10 @@
             // Make sure the data is in the right format and that there's a status container
             if (!data.result || !data.msg || !mcStatus ) return;
 
-            // Update our status message
+    //         // Update our status message
             mcStatus.innerHTML = data.msg;
 
-            // If error, add error class
+    //         // If error, add error class
             if (data.result === 'error') {
                 mcStatus.classList.remove('success-message');
                 mcStatus.classList.add('error-message');
@@ -377,10 +377,38 @@
         ssPreloader();
         ssMobileMenu();
         ssSwiper();
-        ssMailChimpForm();
+        // ssMailChimpForm();
         ssAlertBoxes();
         ssMoveTo();
 
     })();
 
 })(document.documentElement);
+
+
+
+// =============download cv=================
+function downloadCv(file, fileName) {
+    fetch(file)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.blob();
+        })
+        .then(blob => {
+            const blobUrl = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = blobUrl;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(blobUrl);
+        })
+        .catch(error => {
+            console.error("Error downloading file:", error);
+        });
+}
+
+
