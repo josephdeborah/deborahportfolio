@@ -886,7 +886,11 @@ table {
   .card:hover .overlay {
 	transform: translateY(0%);
   }
-
+			
+.cardcontainer{
+	display:flex;
+	flex: wrap;
+}
 /* --------------------------------------------------------------------
  * ## medium devices (801px to 1000px)
  * -------------------------------------------------------------------- */
