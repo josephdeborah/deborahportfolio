@@ -824,8 +824,13 @@ table {
 .grid {
 	display:flex;
 	gap: 20px;
-  }
-
+}
+			
+.cardcontainer{
+	display:flex;
+	gap: 20px;
+	flex-wrap:wrap;
+}
   .card {
 	position: relative;
 	margin: 0 auto;
